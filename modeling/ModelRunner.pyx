@@ -6,7 +6,7 @@ from Compartment import *
 from Model import *
 from OutputProfile import *
 from ParameterConstraint import *
-from test_parameters import parameters60, p1
+from test_parameters import parameters60
 
 
 # feature evaluation parameters
@@ -117,7 +117,7 @@ class ModelRunner:
         if self.model_type == ModelType.full_model:
             return self.variable_parameters.copy()
         if self.model_type == ModelType.soma_conductance:
-            active_parameters = p1.copy()
+            active_parameters = parameters60.copy()
             active_parameters[50] = self.variable_parameters[0]
             active_parameters[51] = self.variable_parameters[1]
             active_parameters[52] = self.variable_parameters[2]
@@ -126,7 +126,7 @@ class ModelRunner:
             active_parameters[56] = self.variable_parameters[5]
             return active_parameters
         if self.model_type == ModelType.soma_kna_conductance:
-            active_parameters = p1.copy()
+            active_parameters = parameters60.copy()
             active_parameters[50] = self.variable_parameters[0]
             active_parameters[51] = self.variable_parameters[1]
             return active_parameters
